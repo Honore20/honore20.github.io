@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honore Avekor | Portfolio Ingénieur Logiciel</title>
+    <title>Honoré Avekor | Ingénieur Logiciel & Créateur IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -46,7 +46,7 @@
 
         /* Background fixe */
         .bg-fixed-tech {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.85)), 
                               url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1920');
             background-attachment: fixed;
             background-size: cover;
@@ -62,7 +62,7 @@
             <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
                 <a href="#profil" class="hover:text-blue-400 transition">Profil</a>
                 <a href="#experiences" class="hover:text-blue-400 transition">Parcours</a>
-                <a href="#projets" class="hover:text-blue-400 transition">Projets</a>
+                <a href="#projets" class="hover:text-blue-400 transition text-blue-300">Projets</a>
                 <a href="#competences" class="hover:text-blue-400 transition">Skills</a>
             </div>
         </div>
@@ -73,23 +73,26 @@
             <div class="inline-block p-3 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
                 <i class="fas fa-terminal text-3xl text-blue-400 animate-pulse"></i>
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">HONORE <span class="text-blue-500">AVEKOR</span></h1>
-            <p class="text-xl md:text-2xl font-light text-slate-400 mb-8 max-w-2xl mx-auto">
-                Ingénieur Développement Logiciel spécialisé en <span class="text-slate-200 font-semibold">Backend & IA</span>.
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">HONORE <span class="text-blue-500">AVEKOR</span></h1>
+            
+            <p class="text-xl md:text-2xl font-light text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Des lignes de code aux produits réels. <br>
+                Ingénieur Développement Logiciel spécialisé en <span class="text-slate-200 font-semibold">Backend & Intégration IA</span>.
             </p>
+            
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:avekorm@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-blue-900/20">
+                <a href="mailto:avekorm@gmail.com" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-blue-600/30 transform hover:-translate-y-1">
                     Me Recruter
                 </a>
-                <a href="#experiences" class="glass text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all">
-                    Explorer mon parcours
+                <a href="#projets" class="glass text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1">
+                    Voir mon Projet SaaS
                 </a>
             </div>
         </div>
     </header>
 
     <section id="profil" class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="glass p-10 rounded-3xl relative overflow-hidden">
+        <div class="glass p-10 rounded-3xl relative overflow-hidden border-t border-blue-500/30">
             <div class="absolute top-0 right-0 p-8 opacity-5">
                 <i class="fas fa-quote-right text-9xl"></i>
             </div>
@@ -100,8 +103,57 @@
                 Étudiant en deuxième année de Bachelor Sciences Informatiques (SIN) à l'EPSI Toulouse, je recherche une alternance de 12 mois en tant qu'Apprenti Ingénieur Développement Logiciel.
             </p>
             <p class="text-lg text-slate-300 leading-relaxed">
-                Passionné par l'architecture logicielle, je maîtrise la conception d'API (FastAPI, Node.js) et l'intégration de LLM. Mon approche est rigoureuse, basée sur les méthodes Agile/Scrum et les tests d'intégration.
+                Passionné par l'architecture logicielle, je ne me contente pas de coder : je construis des solutions complètes. De la conception d'API robustes (FastAPI, Node.js) à l'intégration d'Intelligences Artificielles génératives, j'aime résoudre des problèmes complexes avec des méthodes Agiles.
             </p>
+        </div>
+    </section>
+
+    <section id="projets" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center">Projet <span class="text-blue-500">Phare</span></h2>
+        
+        <div class="glass p-1 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/40 hover-card">
+            <div class="grid md:grid-cols-2 items-center">
+                <div class="relative group overflow-hidden h-full min-h-[300px] md:min-h-full">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800" 
+                         alt="CV Magic AI Preview" 
+                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-blue-900/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                        <i class="fas fa-wand-magic-sparkles text-6xl text-white"></i>
+                    </div>
+                </div>
+
+                <div class="p-8 md:p-12">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> SAAS EN LIGNE
+                        </span>
+                        <span class="text-slate-500 text-sm font-medium">Mars 2026</span>
+                    </div>
+                    
+                    <h3 class="text-3xl font-black mb-4 text-white">CV Magic AI ✨</h3>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        Plateforme SaaS autonome permettant aux candidats de générer des CV sur-mesure optimisés pour les systèmes ATS grâce à l'IA. 
+                        J'ai architecturé et développé l'ensemble de la solution : du web scraping sémantique à l'intégration du tunnel de paiement.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-blue-300">Python (Flask)</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-purple-300">Gemini 2.0 API</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-indigo-300">Stripe Checkout</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-cyan-300">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-slate-300">SQLite</span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://cv-magic-ai.onrender.com" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white text-center font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 flex-1 shadow-lg shadow-blue-900/50">
+                            <i class="fas fa-rocket"></i> Voir la démo
+                        </a>
+                        <a href="https://github.com/Honore20/cv-magic-ai" target="_blank" class="glass hover:bg-white/10 text-white text-center font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 flex-1">
+                            <i class="fab fa-github"></i> Code Source
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -109,71 +161,71 @@
         <h2 class="text-4xl font-bold mb-16 text-center">Expériences <span class="text-blue-500">Clés</span></h2>
         
         <div class="grid md:grid-cols-2 gap-8 text-left">
-            <div class="glass p-8 rounded-3xl hover-card">
+            <div class="glass p-8 rounded-3xl hover-card border-t border-blue-500/20">
                 <div class="flex justify-between items-start mb-6">
-                    <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase">IA & Backend</span>
-                    <i class="fas fa-brain text-blue-500 text-xl"></i>
+                    <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">IA & Backend</span>
+                    <i class="fas fa-brain text-blue-500 text-2xl opacity-80"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-1">Développeur Backend IA</h3>
-                <p class="text-blue-400 text-sm mb-4">ED&DISCE | Jan. 2026 - Mars 2026</p>
-                <ul class="space-y-3 text-slate-400 text-sm">
-                    <li><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Architecture API haute performance via FastAPI.</li>
-                    <li><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Intégration de LLM (Mistral AI / OpenAI).</li>
-                    <li><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Optimisation via Prompt Engineering.</li>
+                <h3 class="text-xl font-bold mb-1 text-white">Développeur Backend IA</h3>
+                <p class="text-blue-400 text-sm mb-5 font-medium">ED&DISCE | Jan. 2026 - Mars 2026</p>
+                <ul class="space-y-3 text-slate-300 text-sm">
+                    <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3 text-xs"></i> <span>Architecture API haute performance via FastAPI.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3 text-xs"></i> <span>Intégration de LLM (Mistral AI / OpenAI).</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3 text-xs"></i> <span>Optimisation via Prompt Engineering.</span></li>
                 </ul>
             </div>
 
-            <div class="glass p-8 rounded-3xl hover-card">
+            <div class="glass p-8 rounded-3xl hover-card border-t border-cyan-500/20">
                 <div class="flex justify-between items-start mb-6">
-                    <span class="bg-cyan-500/20 text-cyan-400 text-xs font-bold px-3 py-1 rounded-full uppercase">Data & APIs</span>
-                    <i class="fas fa-database text-cyan-500 text-xl"></i>
+                    <span class="bg-cyan-500/20 text-cyan-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Data & APIs</span>
+                    <i class="fas fa-database text-cyan-500 text-2xl opacity-80"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-1">Développeur Backend & Data</h3>
-                <p class="text-cyan-400 text-sm mb-4">JENEE | Juin - Août 2025</p>
-                <ul class="space-y-3 text-slate-400 text-sm">
-                    <li><i class="fas fa-check text-cyan-500 mr-2 text-xs"></i> Programmation Node.js & Prisma ORM.</li>
-                    <li><i class="fas fa-check text-cyan-500 mr-2 text-xs"></i> Optimisation SQL (PostgreSQL/MySQL).</li>
-                    <li><i class="fas fa-check text-cyan-500 mr-2 text-xs"></i> Automatisation de tâches complexes en Python.</li>
+                <h3 class="text-xl font-bold mb-1 text-white">Développeur Backend & Data</h3>
+                <p class="text-cyan-400 text-sm mb-5 font-medium">JENEE | Juin - Août 2025</p>
+                <ul class="space-y-3 text-slate-300 text-sm">
+                    <li class="flex items-start"><i class="fas fa-check text-cyan-500 mt-1 mr-3 text-xs"></i> <span>Programmation Node.js & Prisma ORM.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-cyan-500 mt-1 mr-3 text-xs"></i> <span>Optimisation SQL (PostgreSQL/MySQL).</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-cyan-500 mt-1 mr-3 text-xs"></i> <span>Automatisation de tâches complexes en Python.</span></li>
                 </ul>
             </div>
         </div>
     </section>
-
-    <section id="competences" class="py-24 bg-blue-600/5 px-6">
+    
+    <section id="competences" class="py-24 bg-slate-900/50 px-6 border-y border-white/5 backdrop-blur-sm">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-4xl font-bold mb-16">Maîtrise <span class="text-blue-500">Technique</span></h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass p-6 rounded-2xl">
-                    <i class="fab fa-python text-4xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold">Python / Java</h4>
-                    <p class="text-xs text-slate-500 mt-2">Architecture & POO</p>
+                <div class="glass p-8 rounded-2xl hover-card">
+                    <i class="fab fa-python text-5xl text-blue-400 mb-4 drop-shadow-[0_0_15px_rgba(96,165,250,0.5)]"></i>
+                    <h4 class="font-bold text-lg">Python / Java</h4>
+                    <p class="text-xs text-slate-400 mt-2 font-medium">Architecture & POO</p>
                 </div>
-                <div class="glass p-6 rounded-2xl">
-                    <i class="fas fa-link text-4xl text-cyan-400 mb-4"></i>
-                    <h4 class="font-bold">FastAPI / Node</h4>
-                    <p class="text-xs text-slate-500 mt-2">API RESTful</p>
+                <div class="glass p-8 rounded-2xl hover-card">
+                    <i class="fas fa-link text-5xl text-cyan-400 mb-4 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]"></i>
+                    <h4 class="font-bold text-lg">FastAPI / Node</h4>
+                    <p class="text-xs text-slate-400 mt-2 font-medium">API RESTful</p>
                 </div>
-                <div class="glass p-6 rounded-2xl">
-                    <i class="fab fa-docker text-4xl text-blue-500 mb-4"></i>
-                    <h4 class="font-bold">Docker / Git</h4>
-                    <p class="text-xs text-slate-500 mt-2">DevOps & CI/CD</p>
+                <div class="glass p-8 rounded-2xl hover-card">
+                    <i class="fab fa-docker text-5xl text-blue-600 mb-4 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]"></i>
+                    <h4 class="font-bold text-lg">Docker / Git</h4>
+                    <p class="text-xs text-slate-400 mt-2 font-medium">DevOps & CI/CD</p>
                 </div>
-                <div class="glass p-6 rounded-2xl">
-                    <i class="fas fa-shield-halved text-4xl text-emerald-400 mb-4"></i>
-                    <h4 class="font-bold">SIEM / Wazuh</h4>
-                    <p class="text-xs text-slate-500 mt-2">Cyber & Réseaux</p>
+                <div class="glass p-8 rounded-2xl hover-card">
+                    <i class="fas fa-shield-halved text-5xl text-emerald-400 mb-4 drop-shadow-[0_0_15px_rgba(52,211,153,0.5)]"></i>
+                    <h4 class="font-bold text-lg">SIEM / Wazuh</h4>
+                    <p class="text-xs text-slate-400 mt-2 font-medium">Cyber & Réseaux</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-900 text-center">
-        <div class="flex justify-center gap-6 mb-8 text-2xl">
-            <a href="mailto:avekorm@gmail.com" class="text-slate-500 hover:text-blue-500 transition"><i class="fas fa-envelope"></i></a>
-            <a href="#" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-github"></i></a>
+    <footer class="py-12 border-t border-slate-800 text-center bg-slate-950/80 backdrop-blur-md">
+        <div class="flex justify-center gap-8 mb-8 text-2xl">
+            <a href="mailto:avekorm@gmail.com" class="text-slate-500 hover:text-white transition-colors"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/ton-pseudo" target="_blank" class="text-slate-500 hover:text-blue-500 transition-colors"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Honore20" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i class="fab fa-github"></i></a>        
         </div>
-        <p class="text-slate-600 text-sm">© 2026 Honore Avekor. Rythme 2/1 sem. Toulouse, France.</p>
+        <p class="text-slate-500 text-sm font-medium">© 2026 Honore Avekor. <br><span class="text-blue-500/80">Rythme d'alternance : 2/1 sem. Toulouse, France.</span></p>
     </footer>
 
 </body>
