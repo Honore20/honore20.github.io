@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honore Avekor | Portfolio Ingénieur Logiciel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* Effet de verre dépoli (Glassmorphism) */
+        .glass {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation de dégradé sur le texte */
+        .animate-gradient {
+            background: linear-gradient(to right, #3b82f6, #22d3ee, #3b82f6);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Effet de zoom sur les cartes au survol */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hover-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Background fixe */
+        .bg-fixed-tech {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), 
+                              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1920');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 bg-fixed-tech">
+
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto glass rounded-2xl px-8 py-3 flex justify-between items-center">
+            <span class="text-xl font-extrabold tracking-tighter animate-gradient">H. AVEKOR</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#profil" class="hover:text-blue-400 transition">Profil</a>
+                <a href="#experiences" class="hover:text-blue-400 transition">Parcours</a>
+                <a href="#projets" class="hover:text-blue-400 transition">Projets</a>
+                <a href="#competences" class="hover:text-blue-400 transition">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
+        <div class="text-center">
+            <div class="inline-block p-3 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+                <i class="fas fa-terminal text-3xl text-blue-400 animate-pulse"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">HONORE <span class="text-blue-500">AVEKOR</span></h1>
+            <p class="text-xl md:text-2xl font-light text-slate-400 mb-8 max-w-2xl mx-auto">
+                Ingénieur Développement Logiciel spécialisé en <span class="text-slate-200 font-semibold">Backend & IA</span>.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:avekorm@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-blue-900/20">
+                    Me Recruter
+                </a>
+                <a href="#experiences" class="glass text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all">
+                    Explorer mon parcours
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="profil" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="glass p-10 rounded-3xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-5">
+                <i class="fas fa-quote-right text-9xl"></i>
+            </div>
+            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="w-8 h-1 bg-blue-500 rounded-full"></span> À Propos
+            </h2>
+            <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                Étudiant en deuxième année de Bachelor Sciences Informatiques (SIN) à l'EPSI Toulouse, je recherche une alternance de 12 mois en tant qu'Apprenti Ingénieur Développement Logiciel.
+            </p>
+            <p class="text-lg text-slate-300 leading-relaxed">
+                Passionné par l'architecture logicielle, je maîtrise la conception d'API (FastAPI, Node.js) et l'intégration de LLM. Mon approche est rigoureuse, basée sur les méthodes Agile/Scrum et les tests d'intégration.
+            </p>
+        </div>
+    </section>
+
+    <section id="experiences" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center">Expériences <span class="text-blue-500">Clés</span></h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+            <div class="glass p-8 rounded-3xl hover-card">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase">IA & Backend</span>
+                    <i class="fas fa-brain text-blue-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-1">Développeur Backend IA</h3>
+                <p class="text-blue-400 text-sm mb-4">ED&DISCE | Jan. 2026 - Mars 2026</p>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Architecture API haute performance via FastAPI.</li>
+                    <li><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Intégration de LLM (Mistral AI / OpenAI).</li>
+                    <li><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Optimisation via Prompt Engineering.</li>
+                </ul>
+            </div>
+
+            <div class="glass p-8 rounded-3xl hover-card">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="bg-cyan-500/20 text-cyan-400 text-xs font-bold px-3 py-1 rounded-full uppercase">Data & APIs</span>
+                    <i class="fas fa-database text-cyan-500 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-1">Développeur Backend & Data</h3>
+                <p class="text-cyan-400 text-sm mb-4">JENEE | Juin - Août 2025</p>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><i class="fas fa-check text-cyan-500 mr-2 text-xs"></i> Programmation Node.js & Prisma ORM.</li>
+                    <li><i class="fas fa-check text-cyan-500 mr-2 text-xs"></i> Optimisation SQL (PostgreSQL/MySQL).</li>
+                    <li><i class="fas fa-check text-cyan-500 mr-2 text-xs"></i> Automatisation de tâches complexes en Python.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="py-24 bg-blue-600/5 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-16">Maîtrise <span class="text-blue-500">Technique</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass p-6 rounded-2xl">
+                    <i class="fab fa-python text-4xl text-blue-400 mb-4"></i>
+                    <h4 class="font-bold">Python / Java</h4>
+                    <p class="text-xs text-slate-500 mt-2">Architecture & POO</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <i class="fas fa-link text-4xl text-cyan-400 mb-4"></i>
+                    <h4 class="font-bold">FastAPI / Node</h4>
+                    <p class="text-xs text-slate-500 mt-2">API RESTful</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <i class="fab fa-docker text-4xl text-blue-500 mb-4"></i>
+                    <h4 class="font-bold">Docker / Git</h4>
+                    <p class="text-xs text-slate-500 mt-2">DevOps & CI/CD</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <i class="fas fa-shield-halved text-4xl text-emerald-400 mb-4"></i>
+                    <h4 class="font-bold">SIEM / Wazuh</h4>
+                    <p class="text-xs text-slate-500 mt-2">Cyber & Réseaux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-900 text-center">
+        <div class="flex justify-center gap-6 mb-8 text-2xl">
+            <a href="mailto:avekorm@gmail.com" class="text-slate-500 hover:text-blue-500 transition"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="text-slate-600 text-sm">© 2026 Honore Avekor. Rythme 2/1 sem. Toulouse, France.</p>
+    </footer>
+
+</body>
+</html>
