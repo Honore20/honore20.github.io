@@ -3,229 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honoré Avekor | Ingénieur Logiciel & Créateur IA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Honoré Avekor | Ingénieur Logiciel & IA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* --- Styles de Base & Variables --- */
+        :root {
+            --bg-color: #f4f1ea; 
+            --text-color: #1a1a1a; 
+            --primary-color: #ff3b3b; /* Rouge brutaliste */
+            --secondary-color: #4a90e2; /* Bleu tech */
+            --accent-color: #f8e71c; /* Jaune électrique */
+            --glass-bg: rgba(244, 241, 234, 0.7);
+            --glass-border: rgba(26, 26, 26, 0.1);
+            --shadow-neo: 6px 6px 0px #1a1a1a;
+            --shadow-hover: 10px 10px 0px #1a1a1a;
+            --border-thick: 3px solid #1a1a1a;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-        /* Effet de verre dépoli (Glassmorphism) */
-        .glass {
-            background: rgba(15, 23, 42, 0.65);
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: -19px -19px;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- Navbar Glassmorphism --- */
+        header {
+            background-color: var(--glass-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: var(--border-thick);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        /* Animation de dégradé sur le texte */
-        .animate-gradient {
-            background: linear-gradient(to right, #3b82f6, #22d3ee, #3b82f6);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: gradient 3s linear infinite;
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo {
+            font-size: 24px; font-weight: 900; text-transform: uppercase;
+            color: var(--text-color); text-decoration: none;
+            border: var(--border-thick); padding: 5px 15px;
+            box-shadow: 4px 4px 0px var(--primary-color);
+            background: #fff; transition: var(--transition);
+        }
+        .logo:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--primary-color); }
+
+        .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-color); font-weight: 800;
+            font-size: 15px; text-transform: uppercase; transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        /* --- Section Hero --- */
+        .hero { padding-top: 180px; padding-bottom: 100px; position: relative; }
+        
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem); font-weight: 900;
+            text-transform: uppercase; line-height: 0.9; margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+        .hero-title span { color: var(--secondary-color); }
+        
+        .hero-subtitle { font-size: 22px; font-weight: 500; max-width: 700px; margin-bottom: 40px; background: #fff; display: inline-block; padding: 10px 20px; border: var(--border-thick); box-shadow: var(--shadow-neo); }
+
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; }
+        
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 15px 35px; background-color: var(--primary-color); color: #fff;
+            text-decoration: none; font-weight: 800; text-transform: uppercase;
+            border: var(--border-thick); box-shadow: var(--shadow-neo);
+            transition: var(--transition); cursor: pointer; font-size: 16px;
+        }
+        .btn.secondary { background-color: #fff; color: var(--text-color); }
+        
+        .btn:hover { transform: translate(-4px, -4px); box-shadow: var(--shadow-hover); }
+
+        /* --- Sections Communes --- */
+        section { padding: 100px 0; }
+        .section-title {
+            font-size: 3rem; font-weight: 900; text-transform: uppercase;
+            margin-bottom: 50px; display: inline-block; border-bottom: 8px solid var(--accent-color);
+            line-height: 0.7;
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
+        /* --- Cartes Néo-Brutalistes --- */
+        .card {
+            background-color: #fff; border: var(--border-thick);
+            padding: 30px; box-shadow: var(--shadow-neo);
+            transition: var(--transition); position: relative;
         }
+        .card:hover { transform: translate(-5px, -5px); box-shadow: var(--shadow-hover); }
 
-        /* Effet de zoom sur les cartes au survol */
-        .hover-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .hover-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(59, 130, 246, 0.5);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-        }
+        /* --- Projet Phare --- */
+        .project-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #fff; border: var(--border-thick); box-shadow: var(--shadow-neo); overflow: hidden; }
+        @media (max-width: 768px) { .project-card { grid-template-columns: 1fr; } }
+        
+        .project-img-container { border-right: var(--border-thick); position: relative; }
+        @media (max-width: 768px) { .project-img-container { border-right: none; border-bottom: var(--border-thick); } }
+        
+        .project-img { width: 100%; height: 100%; object-fit: cover; min-height: 300px; filter: grayscale(20%); transition: var(--transition); }
+        .project-card:hover .project-img { filter: grayscale(0%); }
+        
+        .project-content { padding: 40px; }
+        .tag { background: var(--accent-color); color: var(--text-color); font-weight: 800; font-size: 12px; padding: 5px 10px; border: 2px solid var(--text-color); display: inline-block; margin-bottom: 15px; text-transform: uppercase; box-shadow: 2px 2px 0px var(--text-color); }
+        
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 30px 0; }
+        .tech-pill { background: var(--bg-color); border: 2px solid var(--text-color); padding: 5px 12px; font-size: 13px; font-weight: 700; }
 
-        /* Background fixe */
-        .bg-fixed-tech {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.85)), 
-                              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1920');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
+        /* --- Grilles --- */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+        /* --- Footer --- */
+        footer { background-color: var(--text-color); color: #fff; padding: 60px 0; text-align: center; border-top: 5px solid var(--primary-color); }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
+        .social-links a { color: var(--bg-color); font-size: 30px; transition: var(--transition); }
+        .social-links a:hover { color: var(--accent-color); transform: translateY(-5px); }
+
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 bg-fixed-tech">
+<body>
 
-    <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-6xl mx-auto glass rounded-2xl px-8 py-3 flex justify-between items-center">
-            <span class="text-xl font-extrabold tracking-tighter animate-gradient">H. AVEKOR</span>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#profil" class="hover:text-blue-400 transition">Profil</a>
-                <a href="#experiences" class="hover:text-blue-400 transition">Parcours</a>
-                <a href="#projets" class="hover:text-blue-400 transition text-blue-300">Projets</a>
-                <a href="#competences" class="hover:text-blue-400 transition">Skills</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
-        <div class="text-center">
-            <div class="inline-block p-3 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
-                <i class="fas fa-terminal text-3xl text-blue-400 animate-pulse"></i>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">HONORE <span class="text-blue-500">AVEKOR</span></h1>
-            
-            <p class="text-xl md:text-2xl font-light text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Des lignes de code aux produits réels. <br>
-                Ingénieur Développement Logiciel spécialisé en <span class="text-slate-200 font-semibold">Backend & Intégration IA</span>.
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:avekorm@gmail.com" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-blue-600/30 transform hover:-translate-y-1">
-                    Me Recruter
-                </a>
-                <a href="#projets" class="glass text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1">
-                    Voir mon Projet SaaS
-                </a>
-            </div>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">H. Avekor</a>
+                <ul class="nav-links">
+                    <li class="hidden md:block"><a href="#profil">Profil</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#experiences">Parcours</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section id="profil" class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="glass p-10 rounded-3xl relative overflow-hidden border-t border-blue-500/30">
-            <div class="absolute top-0 right-0 p-8 opacity-5">
-                <i class="fas fa-quote-right text-9xl"></i>
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Honoré<br><span>Avekor.</span></h1>
+            <p class="hero-subtitle">Ingénieur Développement Logiciel spécialisé en Backend & IA.</p>
+            <div class="btn-group">
+                <a href="mailto:avekorm@gmail.com" class="btn"><i class="fas fa-bolt"></i> Me Recruter</a>
+                <a href="#projets" class="btn secondary"><i class="fas fa-arrow-down"></i> Voir mon SaaS</a>
             </div>
-            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span class="w-8 h-1 bg-blue-500 rounded-full"></span> À Propos
-            </h2>
-            <p class="text-lg text-slate-300 leading-relaxed mb-6">
-                Étudiant en deuxième année de Bachelor Sciences Informatiques (SIN) à l'EPSI Toulouse, je recherche une alternance de 12 mois en tant qu'Apprenti Ingénieur Développement Logiciel.
+        </div>
+    </section>
+
+    <section id="profil" class="container">
+        <h2 class="section-title">À Propos</h2>
+        <div class="card" style="border-top: 10px solid var(--secondary-color);">
+            <p style="font-size: 1.2rem; font-weight: 500;">
+                Étudiant en deuxième année de Bachelor Sciences Informatiques (SIN) à l'EPSI Toulouse, je recherche une <strong>alternance de 12 mois</strong> (rythme 2/1 sem).
             </p>
-            <p class="text-lg text-slate-300 leading-relaxed">
-                Passionné par l'architecture logicielle, je ne me contente pas de coder : je construis des solutions complètes. De la conception d'API robustes (FastAPI, Node.js) à l'intégration d'Intelligences Artificielles génératives, j'aime résoudre des problèmes complexes avec des méthodes Agiles.
+            <p style="font-size: 1.1rem; color: #444; margin-top: 15px;">
+                Passionné par l'architecture logicielle, je ne me contente pas de coder : je construis des solutions concrètes. De la conception d'API robustes à l'intégration d'Intelligences Artificielles génératives, j'aime résoudre des problèmes complexes avec des méthodes Agiles.
             </p>
         </div>
     </section>
 
-    <section id="projets" class="py-24 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-16 text-center">Projet <span class="text-blue-500">Phare</span></h2>
+    <section id="projets" class="container">
+        <h2 class="section-title">Projet Phare</h2>
         
-        <div class="glass p-1 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/40 hover-card">
-            <div class="grid md:grid-cols-2 items-center">
-                <div class="relative group overflow-hidden h-full min-h-[300px] md:min-h-full">
-                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800" 
-                         alt="CV Magic AI Preview" 
-                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-blue-900/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                        <i class="fas fa-wand-magic-sparkles text-6xl text-white"></i>
-                    </div>
+        <div class="project-card">
+            <div class="project-img-container">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="CV Magic AI Preview" class="project-img">
+            </div>
+            <div class="project-content">
+                <span class="tag">SaaS En Ligne (Mars 2026)</span>
+                <h3 style="font-size: 2.5rem; font-weight: 900; margin: 0 0 15px 0; text-transform: uppercase;">CV Magic AI</h3>
+                <p style="color: #444; font-weight: 500;">
+                    Plateforme SaaS autonome permettant de générer des CV sur-mesure optimisés pour les ATS grâce à l'IA. Architecture complète : scraping sémantique, génération Gemini, et tunnel de paiement sécurisé.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-pill">Python (Flask)</span>
+                    <span class="tech-pill">Gemini 2.0 API</span>
+                    <span class="tech-pill">Stripe Checkout</span>
+                    <span class="tech-pill">SQLite</span>
                 </div>
-
-                <div class="p-8 md:p-12">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> SAAS EN LIGNE
-                        </span>
-                        <span class="text-slate-500 text-sm font-medium">Mars 2026</span>
-                    </div>
-                    
-                    <h3 class="text-3xl font-black mb-4 text-white">CV Magic AI ✨</h3>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        Plateforme SaaS autonome permettant aux candidats de générer des CV sur-mesure optimisés pour les systèmes ATS grâce à l'IA. 
-                        J'ai architecturé et développé l'ensemble de la solution : du web scraping sémantique à l'intégration du tunnel de paiement.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-blue-300">Python (Flask)</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-purple-300">Gemini 2.0 API</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-indigo-300">Stripe Checkout</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-cyan-300">Tailwind CSS</span>
-                        <span class="px-3 py-1 bg-slate-800 rounded-md text-xs font-semibold text-slate-300">SQLite</span>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://cv-magic-ai.onrender.com" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white text-center font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 flex-1 shadow-lg shadow-blue-900/50">
-                            <i class="fas fa-rocket"></i> Voir la démo
-                        </a>
-                        <a href="https://github.com/Honore20/cv-magic-ai" target="_blank" class="glass hover:bg-white/10 text-white text-center font-bold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2 flex-1">
-                            <i class="fab fa-github"></i> Code Source
-                        </a>
-                    </div>
+                <div class="btn-group">
+                    <a href="https://cv-magic-ai.onrender.com" target="_blank" class="btn"><i class="fas fa-rocket"></i> Tester l'App</a>
+                    <a href="https://github.com/Honore20/cv-magic-ai" target="_blank" class="btn secondary"><i class="fab fa-github"></i> Code</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experiences" class="py-24 px-6 max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-16 text-center">Expériences <span class="text-blue-500">Clés</span></h2>
-        
-        <div class="grid md:grid-cols-2 gap-8 text-left">
-            <div class="glass p-8 rounded-3xl hover-card border-t border-blue-500/20">
-                <div class="flex justify-between items-start mb-6">
-                    <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">IA & Backend</span>
-                    <i class="fas fa-brain text-blue-500 text-2xl opacity-80"></i>
+    <section id="experiences" class="container">
+        <h2 class="section-title">Expériences</h2>
+        <div class="grid-2">
+            <div class="card" style="border-top: 10px solid var(--primary-color);">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <span class="tag" style="background: var(--primary-color); color: #fff;">IA & Backend</span>
+                    <i class="fas fa-brain" style="font-size: 2rem;"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-1 text-white">Développeur Backend IA</h3>
-                <p class="text-blue-400 text-sm mb-5 font-medium">ED&DISCE | Jan. 2026 - Mars 2026</p>
-                <ul class="space-y-3 text-slate-300 text-sm">
-                    <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3 text-xs"></i> <span>Architecture API haute performance via FastAPI.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3 text-xs"></i> <span>Intégration de LLM (Mistral AI / OpenAI).</span></li>
-                    <li class="flex items-start"><i class="fas fa-check text-blue-500 mt-1 mr-3 text-xs"></i> <span>Optimisation via Prompt Engineering.</span></li>
+                <h3 style="font-size: 1.8rem; font-weight: 900; margin: 15px 0 5px 0; text-transform: uppercase;">ED&DISCE</h3>
+                <p style="font-weight: 700; color: #666; margin-bottom: 20px;">Jan. 2026 - Mars 2026</p>
+                <ul style="padding-left: 20px; font-weight: 500; line-height: 1.8;">
+                    <li>Architecture API haute performance (FastAPI).</li>
+                    <li>Intégration de LLM (Mistral AI / OpenAI).</li>
+                    <li>Optimisation via Prompt Engineering.</li>
                 </ul>
             </div>
 
-            <div class="glass p-8 rounded-3xl hover-card border-t border-cyan-500/20">
-                <div class="flex justify-between items-start mb-6">
-                    <span class="bg-cyan-500/20 text-cyan-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Data & APIs</span>
-                    <i class="fas fa-database text-cyan-500 text-2xl opacity-80"></i>
+            <div class="card" style="border-top: 10px solid var(--secondary-color);">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <span class="tag" style="background: var(--secondary-color); color: #fff;">Data & APIs</span>
+                    <i class="fas fa-database" style="font-size: 2rem;"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-1 text-white">Développeur Backend & Data</h3>
-                <p class="text-cyan-400 text-sm mb-5 font-medium">JENEE | Juin - Août 2025</p>
-                <ul class="space-y-3 text-slate-300 text-sm">
-                    <li class="flex items-start"><i class="fas fa-check text-cyan-500 mt-1 mr-3 text-xs"></i> <span>Programmation Node.js & Prisma ORM.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check text-cyan-500 mt-1 mr-3 text-xs"></i> <span>Optimisation SQL (PostgreSQL/MySQL).</span></li>
-                    <li class="flex items-start"><i class="fas fa-check text-cyan-500 mt-1 mr-3 text-xs"></i> <span>Automatisation de tâches complexes en Python.</span></li>
+                <h3 style="font-size: 1.8rem; font-weight: 900; margin: 15px 0 5px 0; text-transform: uppercase;">JENEE</h3>
+                <p style="font-weight: 700; color: #666; margin-bottom: 20px;">Juin - Août 2025</p>
+                <ul style="padding-left: 20px; font-weight: 500; line-height: 1.8;">
+                    <li>Programmation Node.js & Prisma ORM.</li>
+                    <li>Optimisation SQL (PostgreSQL/MySQL).</li>
+                    <li>Automatisation de tâches en Python.</li>
                 </ul>
             </div>
         </div>
     </section>
-    
-    <section id="competences" class="py-24 bg-slate-900/50 px-6 border-y border-white/5 backdrop-blur-sm">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-16">Maîtrise <span class="text-blue-500">Technique</span></h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass p-8 rounded-2xl hover-card">
-                    <i class="fab fa-python text-5xl text-blue-400 mb-4 drop-shadow-[0_0_15px_rgba(96,165,250,0.5)]"></i>
-                    <h4 class="font-bold text-lg">Python / Java</h4>
-                    <p class="text-xs text-slate-400 mt-2 font-medium">Architecture & POO</p>
-                </div>
-                <div class="glass p-8 rounded-2xl hover-card">
-                    <i class="fas fa-link text-5xl text-cyan-400 mb-4 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]"></i>
-                    <h4 class="font-bold text-lg">FastAPI / Node</h4>
-                    <p class="text-xs text-slate-400 mt-2 font-medium">API RESTful</p>
-                </div>
-                <div class="glass p-8 rounded-2xl hover-card">
-                    <i class="fab fa-docker text-5xl text-blue-600 mb-4 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]"></i>
-                    <h4 class="font-bold text-lg">Docker / Git</h4>
-                    <p class="text-xs text-slate-400 mt-2 font-medium">DevOps & CI/CD</p>
-                </div>
-                <div class="glass p-8 rounded-2xl hover-card">
-                    <i class="fas fa-shield-halved text-5xl text-emerald-400 mb-4 drop-shadow-[0_0_15px_rgba(52,211,153,0.5)]"></i>
-                    <h4 class="font-bold text-lg">SIEM / Wazuh</h4>
-                    <p class="text-xs text-slate-400 mt-2 font-medium">Cyber & Réseaux</p>
-                </div>
+
+    <section id="competences" class="container" style="padding-bottom: 150px;">
+        <h2 class="section-title">Stack Technique</h2>
+        <div class="grid-4">
+            <div class="card" style="text-align: center;">
+                <i class="fab fa-python" style="font-size: 4rem; color: var(--text-color); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 1.2rem; font-weight: 900; text-transform: uppercase;">Python / Java</h4>
+                <p style="font-weight: 600; font-size: 0.9rem; color: #666;">Architecture & POO</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-server" style="font-size: 4rem; color: var(--text-color); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 1.2rem; font-weight: 900; text-transform: uppercase;">FastAPI / Node</h4>
+                <p style="font-weight: 600; font-size: 0.9rem; color: #666;">API RESTful</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fab fa-docker" style="font-size: 4rem; color: var(--text-color); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 1.2rem; font-weight: 900; text-transform: uppercase;">Docker / Git</h4>
+                <p style="font-weight: 600; font-size: 0.9rem; color: #666;">DevOps & CI/CD</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-shield-halved" style="font-size: 4rem; color: var(--text-color); margin-bottom: 15px;"></i>
+                <h4 style="font-size: 1.2rem; font-weight: 900; text-transform: uppercase;">SIEM / Wazuh</h4>
+                <p style="font-weight: 600; font-size: 0.9rem; color: #666;">Cyber & Réseaux</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-800 text-center bg-slate-950/80 backdrop-blur-md">
-        <div class="flex justify-center gap-8 mb-8 text-2xl">
-            <a href="mailto:avekorm@gmail.com" class="text-slate-500 hover:text-white transition-colors"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/ton-pseudo" target="_blank" class="text-slate-500 hover:text-blue-500 transition-colors"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Honore20" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i class="fab fa-github"></i></a>        
+    <footer>
+        <div class="container">
+            <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 20px; letter-spacing: -2px;">H. AVEKOR</h2>
+            <div class="social-links">
+                <a href="mailto:avekorm@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/kossivi-mawuli-honor%C3%A9-avekor-264449362/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Honore20" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p style="font-weight: 600;">© 2026 Honoré Avekor. Conçu pour casser les codes.</p>
         </div>
-        <p class="text-slate-500 text-sm font-medium">© 2026 Honore Avekor. <br><span class="text-blue-500/80">Rythme d'alternance : 2/1 sem. Toulouse, France.</span></p>
     </footer>
 
 </body>
