@@ -12,7 +12,7 @@ const skills = [
   {
     icon: "🛡️",
     title: "Sécurité & SOC",
-    items: ["SIEM Wazuh (XDR)", "Détection d'intrusion", "Analyse de logs & FIM", "EBIOS RM / MITRE ATT&CK"],
+    items: ["SIEM : conception & développement", "Détection d'intrusion", "Analyse de logs & FIM", "EBIOS RM / MITRE ATT&CK"],
   },
   {
     icon: "🌐",
@@ -36,8 +36,8 @@ const projects = [
     tag: "PROJET PHARE — SOC",
     title: "SentinelWatch",
     description:
-      "Dashboard SOC temps réel pour la détection d'attaques brute-force SSH. Architecture de surveillance avec Wazuh (SIEM/XDR), monitoring FIM, alertes automatisées et bannissement d'IPs.",
-    tech: ["Wazuh", "Docker", "SIEM/XDR", "Python"],
+      "SIEM développé de zéro en Python : détection d'attaques brute-force SSH, contrôle d'intégrité de fichiers (FIM), alertes automatisées et bannissement d'IPs, piloté par un dashboard temps réel en WebSocket.",
+    tech: ["Python", "WebSocket", "SIEM", "FIM"],
     link: "https://sentinelwatch.netlify.app/",
     linkLabel: "Voir la démo live",
   },
@@ -67,6 +67,15 @@ const projects = [
     tech: ["Python/Flask", "Gemini API", "Stripe", "SQLite"],
     link: "https://cv-magic-ai.onrender.com",
     linkLabel: "Tester l'application",
+  },
+  {
+    tag: "PWA & IA",
+    title: "HonoreTrack",
+    description:
+      "PWA de suivi nutritionnel conçue et déployée de bout en bout : reconnaissance de repas par photo (IA Gemini Flash), scan de codes-barres et historique sur 7 jours.",
+    tech: ["PWA", "JavaScript", "Gemini Flash", "Netlify"],
+    link: "https://honoretrack.netlify.app",
+    linkLabel: "Voir la démo live",
   },
 ];
 
@@ -275,13 +284,13 @@ function About() {
         <div style={{ background: BG_CARD, border: `1px solid ${BORDER}`, borderRadius: 16, padding: "clamp(24px, 4vw, 48px)", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${ACCENT}, transparent)` }} />
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px, 1.6vw, 17px)", color: TEXT_SECONDARY, lineHeight: 1.85, margin: 0 }}>
-            Passionné par la sécurité des systèmes d'information, je combine une formation en systèmes & réseaux avec une expérience terrain en déploiement SIEM, sécurisation d'API et administration d'infrastructures.{" "}
+            Passionné par la sécurité des systèmes d'information, je combine une formation en systèmes & réseaux avec une expérience terrain en développement de SIEM, sécurisation d'API et administration d'infrastructures.{" "}
             <span style={{ color: TEXT_PRIMARY, fontWeight: 500 }}>Mon approche : comprendre l'attaquant pour mieux défendre.</span>{" "}
             Du firewalling au SOC, je recherche une alternance de 12 mois pour mettre mes compétences au service d'une équipe sécurité.
           </p>
           <div style={{ marginTop: 28, display: "flex", gap: 24, flexWrap: "wrap", fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: ACCENT }}>
             <span>📍 Toulouse, France</span>
-            <span>🎓 EPSI — Bachelor SIN2</span>
+            <span>🎓 EPSI — Bachelor SIN3</span>
             <span>📜 CCNA · Security+ (en cours)</span>
           </div>
         </div>
