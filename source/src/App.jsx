@@ -214,7 +214,7 @@ function Nav({ activeSection }) {
 
 function Hero() {
   const [typed, setTyped] = useState("");
-  const fullText = "Cybersécurité & Infrastructure";
+  const fullText = "Cybersécurité & Développement";
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
@@ -240,7 +240,7 @@ function Hero() {
           <span style={{ animation: "blink 1s step-end infinite", marginLeft: 2 }}>_</span>
         </div>
         <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px, 1.8vw, 18px)", color: TEXT_SECONDARY, maxWidth: 560, margin: "0 auto 40px", lineHeight: 1.7 }}>
-          J'analyse, je sécurise, je protège. Étudiant en Bachelor à l'EPSI Toulouse, je construis des architectures résilientes et je détecte les menaces avant qu'elles ne frappent.
+          Je construis, je sécurise, je déploie. Étudiant en Bachelor à l'EPSI Toulouse, je développe des outils en production — du SIEM au dashboard IA — et je protège les systèmes qui les hébergent.
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
           <a href="#contact" style={{ background: ACCENT, color: BG_DARK, padding: "14px 32px", borderRadius: 8, textDecoration: "none", fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, fontSize: 14, letterSpacing: "0.04em", transition: "transform 0.2s, box-shadow 0.2s" }}
@@ -284,9 +284,9 @@ function About() {
         <div style={{ background: BG_CARD, border: `1px solid ${BORDER}`, borderRadius: 16, padding: "clamp(24px, 4vw, 48px)", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${ACCENT}, transparent)` }} />
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "clamp(15px, 1.6vw, 17px)", color: TEXT_SECONDARY, lineHeight: 1.85, margin: 0 }}>
-            Passionné par la sécurité des systèmes d'information, je combine une formation en systèmes & réseaux avec une expérience terrain en développement de SIEM, sécurisation d'API et administration d'infrastructures.{" "}
-            <span style={{ color: TEXT_PRIMARY, fontWeight: 500 }}>Mon approche : comprendre l'attaquant pour mieux défendre.</span>{" "}
-            Du firewalling au SOC, je recherche une alternance de 12 mois pour mettre mes compétences au service d'une équipe sécurité.
+Étudiant en Bachelor à l'EPSI Toulouse, je construis des outils qui tournent en production : SIEM développé de zéro, plateforme de threat intelligence, PWA avec reconnaissance par IA. Côté défensif, je sécurise les API, j'administre les infrastructures et je durcis les réseaux.{" "}
+            <span style={{ color: TEXT_PRIMARY, fontWeight: 500 }}>Mon approche : coder proprement, tester avant de livrer, et vérifier ce que produit l'IA.</span>{" "}
+            Je recherche une alternance de 12 mois à partir de septembre 2026.
           </p>
           <div style={{ marginTop: 28, display: "flex", gap: 24, flexWrap: "wrap", fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: ACCENT }}>
             <span>📍 Toulouse, France</span>
